@@ -16,4 +16,12 @@ will download the package.
 
 ## Viewing
 
+With [grunt-cli](https://github.com/gruntjs/grunt-cli) installed,
+
+    npm install
+
+will retrieve all the [grunt](http://gruntjs.com) dependencies. Then running this application locally is a simple task.
+
+    grunt connect
+
 To check how the template is rendering simply navigate to the index file in the root directory with any browser that has WebGL support. Alternatively, check out the [project site](http://eugenekadish.github.io/scene-template/) to compare the widget. The tests can be run in the browser as well, by opening *runner.html* in *tests*.
