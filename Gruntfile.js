@@ -1,13 +1,18 @@
 module.exports = function(grunt) {
-
-  // Project configuration.
+ 
+  // Configure the tasks.
   grunt.initConfig({
     
     pkg: grunt.file.readJSON('package.json'),
-    
+
     concat: {
       options: {
-        separator: ';'
+        stripBanners: {
+          options: {
+            block: true,
+            line: true
+          }
+        }
       },
       dist: {
         src: ['source/**/*.js'],
@@ -24,7 +29,7 @@ module.exports = function(grunt) {
     },
     
     jshint: {
-      uses_defaults: ['Gruntfile.js', 'source/**/*.js', 'tests/*.js'],
+      uses_defaults: ['Gruntfile.js', 'source/**/*.js', 'tests/*.js']
     },             
 
     connect: {
@@ -36,11 +41,13 @@ module.exports = function(grunt) {
       }
     }
   });
-
+  
+  // Load the tasks.
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-
+  
+  // Register the tasks.
   grunt.registerTask('build', ['jshint', 'concat', 'uglify']);
 };
