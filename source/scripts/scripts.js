@@ -1,12 +1,12 @@
 /**
- * Creates a WebGL context in supported browsers and renders a 
+ * Creates a WebGL context in supported browsers and renders a
  * static sample drawing in any canvas tag with an id set to
  * "scene".
  */
 (function(){
-  
+
   var gl;
-  var scene = document.getElementById('scene');  
+  var scene = document.getElementById('scene');
 
   // Check that the browser has WebGL support.
   try {
@@ -21,46 +21,46 @@
 
   // Buffer containing coordinate data of a unit cube centered about the origin.
   var vertexBuffer = gl.createBuffer();
-    
+
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-  gl.bufferData(gl.ARRAY_BUFFER, 
+  gl.bufferData(gl.ARRAY_BUFFER,
                     new Float32Array([
                                         -1.0, -1.0,  1.0,  1.0,  1.0, -1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0,
                                          1.0,  1.0,  1.0,  1.0, -1.0,  1.0,  1.0,  1.0, -1.0, -1.0,  1.0,  1.0,
-                                         1.0,  1.0, -1.0,  1.0,  1.0, -1.0, -1.0,  1.0, -1.0, -1.0, -1.0,  1.0, 
+                                         1.0,  1.0, -1.0,  1.0,  1.0, -1.0, -1.0,  1.0, -1.0, -1.0, -1.0,  1.0,
                                          1.0,  1.0, -1.0,  1.0, -1.0,  1.0, -1.0,  1.0, -1.0, -1.0, -1.0,  1.0,
-                                        -1.0,  1.0, -1.0,  1.0, -1.0, -1.0, -1.0,  1.0, -1.0,  1.0,  1.0,  1.0, 
+                                        -1.0,  1.0, -1.0,  1.0, -1.0, -1.0, -1.0,  1.0, -1.0,  1.0,  1.0,  1.0,
                                         -1.0,  1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0, -1.0, -1.0,  1.0,  1.0,
                                          1.0,  1.0, -1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0, -1.0, -1.0,  1.0,
                                          1.0,  1.0,  1.0,  1.0,  1.0, -1.0, -1.0,  1.0,  1.0, -1.0,  1.0,  1.0,
                                          1.0,  1.0,  1.0,  1.0,  1.0,  1.0, -1.0,  1.0, -1.0,  1.0, -1.0,  1.0,
                                         -1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0, -1.0,  1.0, -1.0,  1.0,
-                                         1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  1.0, -1.0, -1.0,  1.0, 
-                                        -1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  0.5, -1.0,  1.0,  1.0 
-                                      ]), 
+                                         1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  1.0, -1.0, -1.0,  1.0,
+                                        -1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  0.5, -1.0,  1.0,  1.0
+                                      ]),
                   		        gl.STATIC_DRAW);
-          
+
   // Buffer containing color data to be interpolated across the faces of a cube.
   var colorBuffer = gl.createBuffer();
-  
+
   gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
   gl.bufferData(gl.ARRAY_BUFFER,
-                    new Float32Array([  
+                    new Float32Array([
                                         1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0,
-                                        1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 
+                                        1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0,
                                         0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0,
                                         0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0,
                                         1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0,
                                         1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0,
                                         0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0,
                                         0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0,
-                                        1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 
+                                        1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0,
                                         1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0,
                                         0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0,
                                         0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0
                          	            ]),
                  	            gl.STATIC_DRAW);
-  
+
   // Define and create the shaders.
   var sources = [];
   var shaders = [];
@@ -69,7 +69,7 @@
                'attribute vec4 color;' +
 
                'uniform mat4 projection;' +
-               'uniform mat4 modelview;' + 
+               'uniform mat4 modelview;' +
 
                'varying vec4 c;' +
 
@@ -81,7 +81,7 @@
   sources[1] = 'precision mediump float;' +
 
                'varying vec4 c;' +
-                   
+
                'void main(){' +
                '  gl_FragColor = c;' +
                '}';
@@ -104,7 +104,7 @@
   }
 
   var shaderProgram = gl.createProgram();
-      
+
   gl.attachShader(shaderProgram, shaders[0]);
   gl.attachShader(shaderProgram, shaders[1]);
   gl.linkProgram(shaderProgram);
@@ -127,17 +127,17 @@
   vec3.set(eye, 1.0, 1.0, 3.0);
   vec3.set(center, 0.0, 0.0, 0.0);
   vec3.set(up, 0.0, 1.0, 0.0);
- 
+
   var projection = mat4.create();
   var modelview  = mat4.create();
 
   mat4.frustum(projection, -0.5, 0.5, -0.5, 0.5, 1.0, 15.0);
   mat4.lookAt(modelview, eye, center, up);
-  
+
   mat4.scale(modelview, modelview, [0.5, 0.5, 0.5]);
 
-  shaderProgram.vertexAttribute = gl.getAttribLocation(shaderProgram, 'vertex'); 
-  
+  shaderProgram.vertexAttribute = gl.getAttribLocation(shaderProgram, 'vertex');
+
   // Set the attribute locations and point them to the corresponding buffer data.
   gl.enableVertexAttribArray(shaderProgram.vertexAttribute);
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
