@@ -5,6 +5,8 @@
  */
 (function(){
 
+  'use strict';
+  
   var gl;
   var scene = document.getElementById('scene');
 
