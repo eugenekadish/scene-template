@@ -9,7 +9,13 @@
   
   var gl;
   var scene = document.getElementById('scene');
-
+  
+  var shapes = new Objects();
+  var cube = shapes.cube;  
+  /*
+  console.log(cube.vertices);
+  console.log(cube.colors);
+  */
   // Check that the browser has WebGL support.
   try {
     gl = scene.getContext('webgl');
@@ -25,6 +31,7 @@
   var vertexBuffer = gl.createBuffer();
 
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  /*
   gl.bufferData(gl.ARRAY_BUFFER,
                     new Float32Array([
                                         -1.0, -1.0,  1.0,  1.0,  1.0, -1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0,
@@ -41,11 +48,14 @@
                                         -1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  0.5, -1.0,  1.0,  1.0
                                       ]),
                   		        gl.STATIC_DRAW);
+  */
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cube.vertices), gl.STATIC_DRAW);
 
   // Buffer containing color data to be interpolated across the faces of a cube.
   var colorBuffer = gl.createBuffer();
 
   gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+  /*
   gl.bufferData(gl.ARRAY_BUFFER,
                     new Float32Array([
                                         1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0,
@@ -62,6 +72,8 @@
                                         0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0
                          	            ]),
                  	            gl.STATIC_DRAW);
+  */
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(cube.colors), gl.STATIC_DRAW);   
 
   // Define and create the shaders.
   var sources = [];
