@@ -1,16 +1,16 @@
 /**
- * Defines assets and properties that can be used for a WebGL context.  
+ * Defines assets and properties that can be used for a WebGL context.
  *
  * @return {Object} Data for rendering.
  */
 function Objects(){
-  
+
   'use strict';
 
   return {
-    
+
     cube: {
-    
+
       vertices: [
                   -1.0, -1.0,  1.0,  1.0,  1.0, -1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  1.0,
                    1.0,  1.0,  1.0,  1.0, -1.0,  1.0,  1.0,  1.0, -1.0, -1.0,  1.0,  1.0,
@@ -25,7 +25,7 @@ function Objects(){
                    1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  1.0, -1.0, -1.0,  1.0,
                   -1.0, -1.0,  1.0,  1.0, -1.0, -1.0, -1.0,  1.0,  0.5, -1.0,  1.0,  1.0
                 ],
-      colors: [ 
+      colors: [
                 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0,
                 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0,
                 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0,
@@ -40,5 +40,5 @@ function Objects(){
                 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0
               ]
     }
-  }
+  };
 }
