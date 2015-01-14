@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title> Testing </title>
-    <link rel="stylesheet" href="../components/qunit/qunit/qunit.css">
+    <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css">
   </head>
   <body>
 
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
- 
+
     <br>
 
-    <canvas id="scene" width="512" height="512"></canvas>
+    <canvas id="scene" width="512" height="512"> Frown town! No <em> canvas </em> support. </canvas>
 
-    <script src="../components/gl-matrix/dist/gl-matrix.js"></script>
-    <script src="../components/qunit/qunit/qunit.js"></script>
-    <script src="../source/scripts/scripts.js"></script>
+    <script src="../bower_components/gl-matrix/dist/gl-matrix-min.js"></script>
+    <script src="../bower_components/qunit/qunit/qunit.js"></script>
+    <script src="../source/scripts/objects.js"></script>
+    <script src="../source/scripts/shaders.js"></script>
+    <script src="../source/scripts/main.js"></script>
     <script src="tests.js"></script>
   </body>
 </html>
