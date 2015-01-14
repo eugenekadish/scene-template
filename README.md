@@ -4,15 +4,15 @@ Setting up even a simple scene with WebGL requires a lot of steps and is difficu
 
 ## Setup
 
-The dependencies are the [gl-matrix](https://github.com/toj/igl-matrix), matrix and vector javascript library, along with the [qunit](http://qunitjs.com), unit testing framework. To avoid downloading these packages manually, the command
+The dependencies are the [gl-matrix](https://github.com/toji/gl-matrix), matrix and vector javascript library, along with the [qunit](http://qunitjs.com), unit testing framework. To avoid downloading these packages manually, the command
 
     bower install
 
-will fetch the required libraries and place them into the *components* folder at the root directory. To get [bower](http://bower.io), [node.js](http://nodejs.org) has to be installed. Then run
+from the root directory, will fetch the required libraries and place them into the default folder *bower* downloads dependencies to. Install [node.js](http://nodejs.org) to get [bower](http://bower.io). Run
 
     npm install -g bower
 
-to download the package. For the [Grunt](http://gruntjs.com/getting-started) tasks, [grunt-cli](https://github.com/gruntjs/grunt-cli) has to be installed.
+to install it globally. For the [Grunt](http://gruntjs.com/getting-started) tasks, [grunt-cli](https://github.com/gruntjs/grunt-cli) has to be installed.
 
     npm install -g grunt-cli
 
