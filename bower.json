@@ -1,6 +1,10 @@
 {
   "name": "scene-template",
   "version": "0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugenekadish/scene-template.git"
+  },
   "dependencies": {
     "gl-matrix": "~2.2.1"
   },
